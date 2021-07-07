@@ -17,3 +17,17 @@ classfile {
    u2
 }
 ```
+
+### JMM
+
+#### volatile 底层实现
+1. 字节码层级
+![img.png](images/volatile_bytecode.png)
+2. JVM层级
+3. OS和硬件层级
+
+#### synchronized 底层实现
+1. 字节码层级
+![img_1.png](images/synchronized_bytecode.png)
+2. JVM层级
+3. OS和硬件层级
