@@ -31,3 +31,6 @@ classfile {
 ![img_1.png](images/synchronized_bytecode.png)
 2. JVM层级
 3. OS和硬件层级
+
+#### 对象分配过程
+![img_2.png](images/对象分配过程详解.png)
