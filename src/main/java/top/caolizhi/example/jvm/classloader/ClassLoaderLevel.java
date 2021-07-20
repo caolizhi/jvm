@@ -13,6 +13,7 @@ public class ClassLoaderLevel {
         System.out.println(sun.reflect.ReflectionFactory.class.getClassLoader()); // null -> boot class loader
         System.out.println(ClassLoaderLevel.class.getClassLoader()); // jdk.internal.loader.ClassLoaders$AppClassLoader@1f89ab83
         System.out.println(ClassLoaderLevel.class.getClassLoader().getClass().getClassLoader()); // null
+        System.out.println(ClassLoader.getSystemClassLoader());
     }
 
 }
