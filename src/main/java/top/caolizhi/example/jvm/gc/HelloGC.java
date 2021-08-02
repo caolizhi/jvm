@@ -14,7 +14,7 @@ public class HelloGC {
     /**
      * java -XX:+PrintCommandLineFlags HelloGC
      * java -Xmn10M -Xms40M -Xmx60M -XX:+PrintCommandLineFlags -XX:+PrintGC  HelloGC
-     * PrintGCDetails PrintGCTimeStamps PrintGCCauses
+     * java -Xmn10M -Xms40M -Xmx60M -XX:+PrintCommandLineFlags -XX:+PrintGC  HelloGC PrintGCTimeStamps PrintGCCause
      * java -XX:+UseConcMarkSweepGC -XX:+PrintCommandLineFlags HelloGC
      * java -XX:+PrintFlagsInitial 默认参数值
      * java -XX:+PrintFlagsFinal 最终参数值
