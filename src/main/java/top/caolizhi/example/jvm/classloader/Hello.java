@@ -2,8 +2,8 @@ package top.caolizhi.example.jvm.classloader;
 
 public class Hello {
 
-    public void hellWorld() {
-        System.out.println("hello, class loader !");
+    public void helloClassLoader() {
+        System.out.println("hello, class loader: " + this.getClass().getClassLoader());
     }
 
 }
