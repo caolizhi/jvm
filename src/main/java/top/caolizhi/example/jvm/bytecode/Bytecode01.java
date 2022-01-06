@@ -11,8 +11,4 @@ public class Bytecode01 {
 		bytecode01.a = 8;
 		si = 9;
 	}
-
-	private void test() {
-		this.a = a;
-	}
 }

@@ -4,7 +4,7 @@
  * @Date 2021/7/20 22:31
  * @Created by 宝子哥
  */
-package top.caolizhi.example.jvm.jmm;
+package top.caolizhi.example.jvm.jmm.cache;
 
 public class WriteCombining {
 

@@ -6,30 +6,36 @@
  * @Date 2021/7/10 20:25
  * @Created by 宝子哥
  */
-package top.caolizhi.example.jvm.jmm;
+package top.caolizhi.example.jvm.jmm.object;
 
-import caolizhi.top.jvm.agent.ObjectSizeAgent;
+import top.caolizhi.example.jvm.agent.ObjectSizeAgent;
 
 public class SizeOfAnObject {
+
+    public static void printObjectSize(Object object) {
+        System.out.println("Object type: " + object.getClass() +
+            ", size: " + ObjectSizeAgent.sizeOf(object) + " bytes.");
+    }
 
     public static void main(String[] args) {
         /** VM Option:（-XX:+UseCompressedClassPointers 默认开启）
          * ① 对象头 8 + 4 = 12 字节
          *     - mark word   8 字节
-         *     - class pointer  4 字节
+         *     - class pointer  ** 4 ** 字节
          * ② 实例数据： 0 字节
+         *
          * ③ padding： 4 字节
          * =============总共：16 字节==================
          */
         /**VM Option:（-XX:-UseCompressedClassPointers 不开启）
          * ① 对象头 8 + 8 = 16 字节
          *     - mark word   8 字节
-         *     - class pointer  8 字节
+         *     - class pointer  ** 8 ** 字节
          * ② 实例数据： 0 字节
          * ③ padding： 0 字节
          * =============总共：16 字节==================
          */
-        System.out.println(ObjectSizeAgent.sizeOf(new Object()));
+        printObjectSize(new Object());
 
         /** VM Option:（-XX:+UseCompressedClassPointers 默认开启）
          * ① 对象头 8 + 4 = 12 字节
@@ -49,7 +55,7 @@ public class SizeOfAnObject {
          * ④ padding： 4 字节
          * =============总共：24 字节==================
          */
-        System.out.println(ObjectSizeAgent.sizeOf(new int[]{}));
+        printObjectSize(new int[]{});
 
         /** VM Option:（-XX:+UseCompressedClassPointers 默认开启）
          * ① 对象头 8 + 4 = 12 字节
@@ -67,10 +73,10 @@ public class SizeOfAnObject {
          * ③ padding： 2 字节
          * =============总共：32 字节==================
          */
-        System.out.println(ObjectSizeAgent.sizeOf(new P()));
+        printObjectSize(new T());
     }
 
-    private static class P {
+    private static class T {
                          // 8 mark word
                          // 4 class pointer， -XX:+UseCompressedClassPointers 开启占4字节，未开启8字节
         int id;          // 4
