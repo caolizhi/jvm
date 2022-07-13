@@ -3,17 +3,10 @@ package top.caolizhi.example.compiler.symbols;
 import top.caolizhi.example.compiler.lexer.Tag;
 
 public class Array extends Type {
-	public Type of;		 // 数组的元素类型
-	public int size = 1; // 元素个数
-
-	public Array(int sz, Type p) {
-		super("[]", Tag.INDEX, sz * p.width);
-		size = sz;
-		of = p;
-	}
-
-	@Override
-	public String toString() {
-		return "[" + size + "]" + of.toString();
-	}
+   public Type of;                  // array *of* type
+   public int size = 1;             // number of elements
+   public Array(int sz, Type p) {
+      super("[]", Tag.INDEX, sz*p.width); size = sz;  of = p;
+   }
+   public String toString() { return "[" + size + "] " + of.toString(); }
 }
