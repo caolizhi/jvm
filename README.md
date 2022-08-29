@@ -33,4 +33,4 @@ classfile {
 3. OS和硬件层级
 
 #### 对象分配过程
-![img_2.png](images/object_assign.png)
+![img_2.png](images/object_assign1.png)
